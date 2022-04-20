@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-lib';
+
+  public clickFunction(event: any) {
+    console.log(event);
+  }
 }
