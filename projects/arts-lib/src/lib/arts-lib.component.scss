@@ -1,0 +1,182 @@
+/**
+ * Sets appearance-filled status color style
+ */
+
+::ng-deep button.appearance-filled.status-info {
+  background-color: #0095ff;
+  border-color: #0095ff;
+  color: #ffffff;
+}
+
+::ng-deep button.appearance-filled.status-primary {
+  background-color: #3366ff;
+  border-color: #3366ff;
+  color: #ffffff;
+}
+
+::ng-deep button.appearance-filled.status-success {
+  background-color: #00d68f;
+  border-color: #00d68f;
+  color: #ffffff;
+}
+
+::ng-deep button.appearance-filled.status-warning {
+  background-color: #ffaa00;
+  border-color: #ffaa00;
+  color: #ffffff;
+}
+
+::ng-deep button.appearance-filled.status-danger {
+  background-color: #ff3d71;
+  border-color: #ff3d71;
+  color: #ffffff;
+}
+
+::ng-deep button.appearance-filled.status-basic {
+  background-color: #edf1f7;
+  border-color: #edf1f7;
+  color: #222b45;
+}
+
+::ng-deep button.appearance-filled.status-control {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #222b45;
+}
+
+/**
+ * Sets appearance-filled size style
+ */
+
+::ng-deep button.appearance-filled {
+  border-style: solid;
+  border-width: .0625rem;
+  text-transform: uppercase;
+}
+
+::ng-deep button.appearance-filled.size-tiny {
+  font-size: .625rem;
+  line-height: 1rem;
+  padding: .3125rem .625rem;
+}
+
+::ng-deep button.appearance-filled.size-small {
+  font-size: .75rem;
+  line-height: 1rem;
+  padding: .4375rem .875rem;
+}
+
+::ng-deep button.appearance-filled.size-medium {
+  font-size: .875rem;
+  line-height: 1rem;
+  padding: .6875rem 1.125rem;
+}
+
+::ng-deep button.appearance-filled.size-large {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  padding: .8125rem 1.125rem;
+}
+
+::ng-deep button.appearance-filled.size-giant {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: .9375rem 1.375rem;
+}
+
+/**
+ * Sets appearance-outline size style
+ */
+
+::ng-deep button.appearance-outline {
+  border-style: solid;
+  border-width: .0625rem;
+  text-transform: uppercase;
+}
+
+::ng-deep button.appearance-outline.size-tiny {
+  font-size: .625rem;
+  line-height: 1rem;
+  padding: .3125rem .625rem;
+}
+
+::ng-deep button.appearance-outline.size-small {
+  font-size: .75rem;
+  line-height: 1rem;
+  padding: .4375rem .875rem;
+}
+
+::ng-deep button.appearance-outline.size-medium {
+  font-size: .875rem;
+  line-height: 1rem;
+  padding: .6875rem 1.125rem;
+}
+
+::ng-deep button.appearance-outline.size-large {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  padding: .8125rem 1.125rem;
+}
+
+::ng-deep button.appearance-outline.size-giant {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: .9375rem 1.375rem;
+}
+
+/**
+ * Sets appearance-outline status color style
+ */
+
+::ng-deep button.appearance-outline.status-info {
+  background-color: rgb(0 149 255 / 8%);
+  border-color: #0095ff;
+  color: #0095ff;
+}
+
+::ng-deep button.appearance-outline.status-primary {
+  background-color: rgb(51 102 255 / 8%);
+  border-color: #3366ff;
+  color: #3366ff;
+}
+
+::ng-deep button.appearance-outline.status-success {
+  background-color: rgb(0 214 143 / 8%);
+  border-color: #00d68f;
+  color: #00d68f;
+}
+
+::ng-deep button.appearance-outline.status-warning {
+  background-color: rgb(255 170 0 / 8%);
+  border-color: #ffaa00;
+  color: #ffaa00;
+}
+
+::ng-deep button.appearance-outline.status-danger {
+  background-color: rgb(255 61 113 / 8%);
+  border-color: #ff3d71;
+  color: #ff3d71;
+}
+
+::ng-deep button.appearance-outline.status-basic {
+  background-color: #edf1f7;
+  border-color: #edf1f7;
+  color: #222b45;
+}
+
+::ng-deep button.appearance-outline.status-control {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #222b45;
+}
+
+
+::ng-deep button.shape-rectangle {
+  border-radius: 0.25rem;
+}
+
+::ng-deep button.btn-disabled {
+  background-color: rgba(143, 155, 129, .24) !important;
+  border-color: rgba(143, 155, 129, .24) !important;
+  color: rgba(143, 155, 129, .48) !important;
+}

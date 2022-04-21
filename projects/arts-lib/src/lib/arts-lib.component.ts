@@ -4,120 +4,20 @@ import {
   HostBinding,
   HostListener,
   Input, NgZone,
-  Renderer2,
+  Renderer2, ViewEncapsulation,
 } from '@angular/core';
+import { BooleanInput, convertToBoolProperty } from './helpers';
+import { ComponentOrCustomStatus } from './component-status';
+import { ComponentSize } from './component-size';
+import { ComponentShape } from './component-shape';
+import { ButtonAppearance } from './component-apperance';
 
 @Component({
   selector: 'button[libButton]',
   template: `
     <ng-content></ng-content>
   `,
-  styles: [
-    `
-      ::ng-deep button.appearance-filled.size-tiny {
-        padding: .3125rem .625rem;
-      }
-
-      ::ng-deep button.appearance-filled.size-small {
-        padding: .4375rem .875rem;
-      }
-
-      ::ng-deep button.appearance-filled.size-medium {
-        padding: .6875rem 1.125rem;
-      }
-
-      ::ng-deep button.appearance-filled.size-large {
-        padding: .8125rem 1.125rem;
-      }
-
-      ::ng-deep button.appearance-filled.size-giant {
-        padding: .9375rem 1.375rem;
-      }
-
-      ::ng-deep button.appearance-filled.status-info {
-        background-color: #0095ff;
-        border-color: #0095ff;
-        color: #ffffff;
-      }
-
-      ::ng-deep button.appearance-filled.status-primary {
-        background-color: #3366ff;
-        border-color: #3366ff;
-        color: #ffffff;
-      }
-
-      ::ng-deep button.appearance-filled.status-success {
-        background-color: #00d68f;
-        border-color: #00d68f;
-        color: #ffffff;
-      }
-
-      ::ng-deep button.appearance-filled.status-warning {
-        background-color: #ffaa00;
-        border-color: #ffaa00;
-        color: #ffffff;
-      }
-
-      ::ng-deep button.appearance-filled.status-danger {
-        background-color: #ff3d71;
-        border-color: #ff3d71;
-        color: #ffffff;
-      }
-
-      ::ng-deep button.appearance-filled.status-basic {
-        background-color: #edf1f7;
-        border-color: #edf1f7;
-        color: #222b45;
-      }
-
-      ::ng-deep button.appearance-filled.status-control {
-        background-color: #ffffff;
-        border-color: #ffffff;
-        color: #222b45;
-      }
-
-      ::ng-deep button.shape-rectangle {
-        border-radius: 0.25rem;
-      }
-
-      ::ng-deep button.appearance-filled {
-        border-style: solid;
-        border-width: .0625rem;
-        text-transform: uppercase;
-      }
-
-      ::ng-deep button.appearance-filled.size-tiny {
-        font-size: .625rem;
-        line-height: 1rem;
-      }
-
-      ::ng-deep button.appearance-filled.size-small {
-        font-size: .75rem;
-        line-height: 1rem;
-      }
-
-      ::ng-deep button.size-medium {
-        font-size: .875rem;
-        line-height: 1rem;
-      }
-
-      ::ng-deep button.appearance-filled.size-large {
-        font-size: 1rem;
-        line-height: 1.25rem;
-      }
-
-      ::ng-deep button.appearance-filled.size-giant {
-        font-size: 1.125rem;
-        line-height: 1.5rem;
-      }
-
-      ::ng-deep button.btn-disabled {
-        background-color: rgba(143, 155, 129, .24) !important;
-        border-color: rgba(143, 155, 129, .24) !important;
-        color: rgba(143, 155, 129, .48) !important;
-      }
-    `
-  ]
+  styleUrls: ['./arts-lib.component.scss']
 })
 export class ArtsLibComponent  {
   @Input() appearance: ButtonAppearance = 'filled';
@@ -246,6 +146,34 @@ export class ArtsLibComponent  {
   }
   static ngAcceptInputType_outline: BooleanInput;
 
+  /**
+   * Sets `ghost` appearance
+   */
+  @Input()
+  @HostBinding('class.appearance-ghost')
+  get ghost(): boolean {
+    return this.appearance === 'ghost';
+  }
+  set ghost(value: boolean) {
+    if (convertToBoolProperty(value)) {
+      this.appearance = 'ghost';
+    }
+  }
+  static ngAcceptInputType_ghost: BooleanInput;
+
+  /**
+   * If set element will fill its container
+   */
+  @Input()
+  @HostBinding('class.full-width')
+  get fullWidth(): boolean {
+    return this._fullWidth;
+  }
+  set fullWidth(value: boolean) {
+    this._fullWidth = convertToBoolProperty(value);
+  }
+  private _fullWidth = false;
+  static ngAcceptInputType_fullWidth: BooleanInput;
 
   @HostListener('click', ['$event'])
   onClick(event: { preventDefault: () => void; stopImmediatePropagation: () => void; }) {
@@ -261,22 +189,4 @@ export class ArtsLibComponent  {
     protected cd: ChangeDetectorRef,
     protected zone: NgZone,
   ) {}
-}
-
-export type ButtonAppearance = 'filled' | 'outline' | 'ghost' | 'hero';
-export type ComponentShape = 'rectangle' | 'semi-round' | 'round';
-export type ComponentSize = 'tiny' | 'small' | 'medium' | 'large' | 'giant';
-export type ComponentStatus = 'basic' | 'primary' | 'success' | 'warning' | 'danger' | 'info' | 'control';
-export type ComponentOrCustomStatus = ComponentStatus | string;
-export type NullableInput = string | null | undefined;
-export type BooleanInput = boolean | NullableInput;
-
-export function convertToBoolProperty(val: any): boolean {
-  if (typeof val === 'string') {
-    val = val.toLowerCase().trim();
-
-    return val === 'true' || val === '';
-  }
-
-  return !!val;
 }
