@@ -4,7 +4,7 @@ import {
   HostBinding,
   HostListener,
   Input, NgZone,
-  Renderer2, ViewEncapsulation,
+  Renderer2
 } from '@angular/core';
 import { BooleanInput, convertToBoolProperty } from './helpers';
 import { ComponentOrCustomStatus } from './component-status';
@@ -145,21 +145,6 @@ export class ArtsLibComponent  {
     }
   }
   static ngAcceptInputType_outline: BooleanInput;
-
-  /**
-   * Sets `ghost` appearance
-   */
-  @Input()
-  @HostBinding('class.appearance-ghost')
-  get ghost(): boolean {
-    return this.appearance === 'ghost';
-  }
-  set ghost(value: boolean) {
-    if (convertToBoolProperty(value)) {
-      this.appearance = 'ghost';
-    }
-  }
-  static ngAcceptInputType_ghost: BooleanInput;
 
   /**
    * If set element will fill its container

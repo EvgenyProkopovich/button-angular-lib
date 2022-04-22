@@ -175,6 +175,10 @@
   border-radius: 0.25rem;
 }
 
+::ng-deep button.full-width {
+  width: 100%;
+}
+
 ::ng-deep button.btn-disabled {
   background-color: rgba(143, 155, 129, .24) !important;
   border-color: rgba(143, 155, 129, .24) !important;

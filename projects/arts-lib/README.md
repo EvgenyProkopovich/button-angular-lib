@@ -7,7 +7,7 @@
 ## <g-emoji class="g-emoji" alias="scroll" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dc.png">📜</g-emoji> | Setup
 
 ```html
-ButtonAppearance = 'filled' | 'outline' | 'ghost' | 'hero';
+ButtonAppearance = 'filled' | 'outline';
 ComponentShape = 'rectangle' | 'semi-round' | 'round';
 ComponentSize = 'tiny' | 'small' | 'medium' | 'large' | 'giant';
 ComponentStatus = 'basic' | 'primary' | 'success' | 'warning' | 'danger' | 'info' | 'control';

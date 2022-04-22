@@ -1,1 +1,1 @@
-export type ButtonAppearance = 'filled' | 'outline' | 'ghost' | 'hero';
+export type ButtonAppearance = 'filled' | 'outline';
