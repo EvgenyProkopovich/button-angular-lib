@@ -171,9 +171,25 @@
 }
 
 
+/**
+ * Sets shape style
+ */
+
 ::ng-deep button.shape-rectangle {
   border-radius: 0.25rem;
 }
+
+::ng-deep button.shape-semi-round {
+  border-radius: 0.65rem;
+}
+
+::ng-deep button.shape-round {
+  border-radius: 1.5rem;
+}
+
+/**
+ * Sets full-width style
+ */
 
 ::ng-deep button.full-width {
   width: 100%;
