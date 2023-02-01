@@ -45,6 +45,7 @@ export class ArtsLibComponent  {
   get primary() {
     return this.status === 'primary';
   }
+  
 
   @HostBinding('class.status-info')
   get info() {
